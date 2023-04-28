@@ -254,11 +254,6 @@
     <Content Include="Views\Tools\Edit.cshtml" />
     <Content Include="Views\Tools\Index.cshtml" />
     <Content Include="Views\Tools\Error.cshtml" />
-    <Content Include="Views\ToolHistories\Create.cshtml" />
-    <Content Include="Views\ToolHistories\Delete.cshtml" />
-    <Content Include="Views\ToolHistories\Details.cshtml" />
-    <Content Include="Views\ToolHistories\Edit.cshtml" />
-    <Content Include="Views\ToolHistories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

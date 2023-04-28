@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Tool Return</title>
+    <title>@ViewBag.Title - InspecTime</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -29,7 +29,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/tools/">Tool Return</a>
+            <a class="navbar-brand" href="/tools/">InspecTime</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -37,19 +37,21 @@
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link active" href="/tools/">
-                            Tools
+                            End Log
                             <span class="visually-hidden">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/tools/CheckOut">Check out tool</a>
+                        <a class="nav-link" href="/tools/CheckOut">Start Log</a>
                     </li>
 
                 </ul>
-                <form class="d-flex" action="/tools/" method="get">
+
+                @*@<form class="d-flex" action="/tools/" method="get">
                     <input class="form-control me-sm-2" type="search" placeholder="Search" name="SearchString">
                     <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
+                </form>*@
+
             </div>
         </div>
     </nav>
@@ -57,7 +59,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Toyo Tanso, Tool Return</p>
+            <p>&copy; @DateTime.Now.Year - Toyo Tanso, InspecTime</p>
         </footer>
     </div>
 

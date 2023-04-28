@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33423.256
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InspecTime", "InspecTime\InspecTime.csproj", "{CFDD5E10-E881-4CB6-8606-1B27FFA7D6D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLibrary", "DataLibrary\DataLibrary.csproj", "{8E3C569B-8413-4888-9FAC-4FAC1041FFBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFDD5E10-E881-4CB6-8606-1B27FFA7D6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFDD5E10-E881-4CB6-8606-1B27FFA7D6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFDD5E10-E881-4CB6-8606-1B27FFA7D6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFDD5E10-E881-4CB6-8606-1B27FFA7D6D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E3C569B-8413-4888-9FAC-4FAC1041FFBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E3C569B-8413-4888-9FAC-4FAC1041FFBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E3C569B-8413-4888-9FAC-4FAC1041FFBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E3C569B-8413-4888-9FAC-4FAC1041FFBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CFF23AD6-9904-4D16-A97E-276880967637}
+	EndGlobalSection
+EndGlobal

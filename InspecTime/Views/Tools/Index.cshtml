@@ -1,0 +1,84 @@
+﻿@model IEnumerable<InspecTime.Models.Tool>
+
+@{
+    ViewBag.Title = "Tools List";
+}
+
+<h2>Checked out tools</h2>
+
+<a href="/tools/CheckOut">
+    <button type="button" class="btn btn-primary">
+        Check Out Tool
+    </button>
+</a>
+<div class="container pt-3">
+    @using (Html.BeginForm("Index", "tools", FormMethod.Get, new { htmlAttributes = new { @class = "form-group" } }))
+    {
+    <p>
+        Tool Number:
+        @Html.TextBox("SearchString")<input type="submit" value="Filter" class="l-margin btn btn-primary " />
+        <a href="/tools/"><button type="button" id="reset" class="btn-secondary">Clear Filters</button></a>
+    </p>
+        
+    }
+
+</div>
+
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.toolNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.D_Remove)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.P_Return)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpNo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.toolNumber)
+                </td>
+                <td>
+                    @{
+                        string removeDate = item.D_Remove.ToString().Substring(0, 10);
+                    }
+                    @Html.DisplayFor(modelItem => removeDate)
+                </td>
+                <td>
+                    @{
+                        string returnDate = item.P_Return.ToString().Substring(0, 10);
+                    }
+                    @Html.DisplayFor(modelItem => returnDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WC)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmpNo)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.toolNumber }) |
+                    @Html.ActionLink("Return", "Return", new { id = item.toolNumber })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

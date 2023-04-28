@@ -1,0 +1,130 @@
+﻿@model InspecTime.Models.Tool
+
+ 
+
+@{
+    ViewBag.Title = "Check out tool";
+}
+
+<h2>Check Out</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Tool</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.toolNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.toolNumber, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.DropDownListFor(model => model.toolNumber, new SelectList(Model.ToolNoDropDownList), "Select Tool")
+                @Html.ValidationMessageFor(model => model.toolNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.D_Remove, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.D_Remove, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now.ToString("MM/dd/yyyy") } })
+                @Html.ValidationMessageFor(model => model.D_Remove, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.P_Return, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.P_Return, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.P_Return, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.WC, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.WC, new { htmlAttributes = new { @class = "form-control" } })*@
+                @*@Html.EditorFor(model => model.WC, new { htmlAttributes = new { @class = "form-control", list = "datalistOptions",
+               placeholder = "Type to search..." } })*@
+
+                @Html.DropDownListFor(model => model.WC, new SelectList(Model.WCdropDownList), "Select WC")
+                
+                <datalist id="datalistOptions">
+                     
+                    
+                    <option value="0TRM">
+                    <option value="1MT1">
+                    <option value="1MT2">
+                    <option value="2RD2">
+                    <option value="2SAW">
+                    <option value="2SD1">
+                    <option value="3ASY">
+                    <option value="3GR2">
+                    <option value="3GRD">
+                    <option value="3LA1">
+                    <option value="3MLT">
+                    <option value="3SL2">
+                    <option value="3VT1">
+                    <option value="4AL1">
+                    <option value="4CLS">
+                    <option value="4HD1">
+                    <option value="4IN1">
+                    <option value="4NX1">
+                    <option value="4SKS">
+                    <option value="4SL3">
+                    <option value="4SL4">
+                    <option value="4SLS">
+                    <option value="4TL2">
+                    <option value="4VL1">
+                    <option value="4VT1">
+                    <option value="5BB1">
+                    <option value="5CFS">
+                    <option value="5CM8">
+                    <option value="5CM9">
+                    <option value="5CMS">
+                    <option value="5DK2">
+                    <option value="5EG1">
+                    <option value="5HD1">
+                    <option value="5HD2">
+                    <option value="5MM1">
+                    <option value="5MT2">
+                    <option value="5MT4">
+                    <option value="5MTS">
+                    <option value="5MX1">
+                    <option value="5MX2">
+                    <option value="5MX3">
+                    <option value="5SMS">
+                    <option value="5VTS">
+                </datalist>
+                @Html.ValidationMessageFor(model => model.WC, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmpNo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.EmpNo, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.DropDownListFor(model => model.EmpNo, new SelectList(Model.EmplDropDownList), "Select Employee")
+
+                @Html.ValidationMessageFor(model => model.EmpNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Check Out" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to checked out tools", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

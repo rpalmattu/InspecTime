@@ -19,11 +19,14 @@ namespace InspecTime
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            // Has to be a bundle because bootstrap 5 is not compatible
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                        //"~/Scripts/umd/popper.js",
+                      "~/Scripts/bootstrap.bundle.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootswatch/simplex/bootstrap.css",
+                      "~/Content/bootstrap.css",
                       //"~/Content/bootstrap.css",
                       "~/Content/Site.css"));
         }

@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - InspecTime</title>
     @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/bootswatch/simplex/bootstrap.css")
+    @Scripts.Render("~/bundles/bootstrap")
+
     @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("scripts", required: false)
+
 </head>
 <body>
     @*<div class="navbar navbar-inverse navbar-fixed-top">
@@ -28,23 +31,34 @@
         </div>
     </div>*@
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="/tools/">InspecTime</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarColor02">
+            <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/tools/">
+                        <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")" href="/tools/">
                             End Log
                             <span class="visually-hidden">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/tools/CheckOut">Start Log</a>
+                        <a class="nav-link @(ViewContext.RouteData.Values["Action"].ToString() == "Tool/CheckOut" ? "active" : "")" href="/tools/CheckOut">Start Log</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Task Log</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Add</a>
+                            <a class="dropdown-item" href="#">Close</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </li>
+
 
                 </ul>
 

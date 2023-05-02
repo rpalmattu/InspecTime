@@ -24,6 +24,6 @@ namespace InspecTime.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        public System.Data.Entity.DbSet<InspecTime.Models.ToolHistory> ToolHistories { get; set; }
+        
     }
 }
